@@ -688,4 +688,189 @@ img {
     .logo-block div:last-child {
         border-bottom: none;
     }
+    /* Лабораторна №8 — API, віджети та інформери */    
+
+    .api-page {
+        padding-bottom: 20px;
+    }   
+
+    .api-intro {
+        padding: 20px;
+        line-height: 1.6;
+        text-align: center;
+    }   
+
+    .api-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        padding: 0 20px 20px;
+    }   
+
+    .api-card {
+        border: 1px solid #cfd8dc;
+        background: #fbfdfe;
+        padding: 18px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(18, 63, 95, 0.08);
+    }   
+
+    .api-card-wide {
+        grid-column: 1 / -1;
+    }   
+
+    .api-card h3 {
+        margin: 0 0 8px;
+        color: #123f5f;
+    }   
+
+    .api-desc {
+        margin: 0 0 14px;
+        color: #455a64;
+        line-height: 1.5;
+    }   
+
+    .custom-api-widget {
+        border: 1px solid #b0bec5;
+        background: #e8f5f5;
+        border-left: 5px solid #28a6a6;
+        padding: 16px;
+        border-radius: 6px;
+    }   
+
+    /* Погода */    
+
+    .weather-city {
+        font-size: 20px;
+        font-weight: 700;
+        color: #123f5f;
+    }   
+
+    .weather-temp {
+        font-size: 42px;
+        font-weight: 800;
+        color: #00695c;
+        margin: 6px 0;
+    }   
+
+    .weather-info {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }   
+
+    .weather-small {
+        font-size: 13px;
+        color: #546e7a;
+    }   
+
+    /* Фінансовий інформер */   
+
+    .currency-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 0;
+        border-bottom: 1px solid #cfd8dc;
+    }   
+
+    .currency-row:last-of-type {
+        border-bottom: none;
+    }   
+
+    .currency-row span {
+        font-weight: 700;
+        color: #123f5f;
+    }   
+
+    .currency-row strong {
+        color: #00695c;
+    }   
+
+    .finance-note {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #546e7a;
+    }   
+
+    /* Google Maps */   
+
+    .map-frame,
+    .youtube-frame {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 6px;
+        border: 1px solid #cfd8dc;
+        background: #eef3f6;
+    }   
+
+    .map-frame {
+        height: 320px;
+    }   
+
+    .youtube-frame {
+        height: 420px;
+    }   
+
+    .map-frame iframe,
+    .youtube-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }   
+
+    /* GitHub */    
+
+    .github-widget {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }   
+
+    .github-avatar img {
+        width: 86px;
+        height: 86px;
+        border-radius: 50%;
+        border: 3px solid #28a6a6;
+    }   
+
+    .github-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }   
+
+    .github-info strong {
+        font-size: 22px;
+        color: #123f5f;
+    }   
+
+    .github-info span {
+        color: #546e7a;
+    }   
+
+    .github-info a {
+        color: #00695c;
+        font-weight: 700;
+    }   
+
+    /* Адаптивність API-сторінки */ 
+
+    @media (max-width: 768px) {
+        .api-grid {
+            grid-template-columns: 1fr;
+        }   
+
+        .api-card-wide {
+            grid-column: auto;
+        }   
+
+        .youtube-frame {
+            height: 280px;
+        }   
+
+        .github-widget {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
 }
