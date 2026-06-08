@@ -62,39 +62,11 @@
             <article class="api-card">
                 <h3>Погодний інформер i.ua</h3>
                 <p class="api-desc">Віджет погоди для міста Тернопіль.</p>
-
-                <div class="iua-widget-box">
-                    <style>
-                        #IUAweather {min-width: 120px; width: 100% !important; cursor: pointer;}
-                        #IUAweather * {margin: 0; padding: 0;}
-                        #IUAweather .content {overflow: hidden; padding: 8px; font-family: Arial; font-size: 12px; color: #000000; background: #EEEEEE; border: 1px solid #00529c;}
-                        #IUAweather h1 {overflow: hidden; margin-top: -4px; font-size: 14px; font-weight: bold; height: 24px; line-height: 24px; color: #000000;}
-                        #IUAweather h1 span {float: left; white-space: nowrap;}
-                        #IUAweather h1 i {float: right; display: inline-block; width: 36px; height: 15px; background: url(https://i3.i.ua/v2/logo/logo_small_14_black.png) no-repeat 0 1px transparent; opacity: .3;}
-                        #IUAweather a, #IUAweather a:hover {border: none; text-decoration: underline; color: #000000;}
-                        #IUAweather dl {overflow: hidden; background: #FFFFFF; color:#000000; padding: 8px; margin-bottom: 4px;}
-                        #IUAweather dl dt {font-weight: bold; font-size: 13px;}
-                        #IUAweather dl dd {float: left; white-space: nowrap; width: 50%; min-width: 105px;}
-                        #IUAweather dl dd span {display: block; line-height: 28px; font-size: 22px; font-family: Trebuchet MS;}
-                        #IUAweather dl dd span img {vertical-align: top; margin-right: 2px;}
-                    </style>
-
-                    <div id="IUAweather" onclick="window.location.href='https://weather.i.ua/Ternopol/';">
-                        <div class="content" id="IUAweatherBody">
-                            <h1 id="IUAweatherTitle">
-                                <span><a href="https://weather.i.ua/Ternopol/" id="IUAweatherTitleLink">Погода</a></span><i></i>
-                            </h1>
-                            <dl id="IUAweatherEmbed"></dl>
-                            <a href="https://weather.i.ua/Ternopol/" id="IUAweatherLink">Прогноз погоди на тиждень</a>
-                        </div>
-                    </div>
-
-                    <script>
-                        iWeatherCity = 12101;
-                        iWeatherLang = 2;
-                        iWeatherEnc = 0;
-                    </script>
-                    <script src="https://i3.i.ua/js/i/weather_informer.js" charset="windows-1251"></script>
+                    
+                <div class="iua-image-widget">
+                    <a href="https://weather.i.ua/Ternopol/" target="_blank" rel="noopener">
+                        <img src="https://f.i.ua/ip3_c12101_l2.png" alt="Погода в Тернополі">
+                    </a>
                 </div>
             </article>
 
