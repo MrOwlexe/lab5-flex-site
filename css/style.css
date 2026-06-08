@@ -897,18 +897,20 @@ img {
 /* Користувацьке контекстне меню */
 
 #custommenu {
-    position: absolute;
+    position: fixed !important;
+    left: 0;
+    top: 0;
     width: 230px;
-    visibility: hidden;
     display: none;
+    visibility: hidden;
     background: #ffffff;
     border: 1px solid #b0bec5;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
     z-index: 999999;
     padding: 6px 0;
 }
 
-.menu-item {
+#custommenu .menu-item {
     padding: 12px 16px;
     color: #123f5f;
     font-size: 15px;
@@ -917,7 +919,7 @@ img {
     background: #ffffff;
 }
 
-.menu-item:hover {
+#custommenu .menu-item:hover {
     background: #e8f5f5;
     border: 1px solid #28a6a6;
 }

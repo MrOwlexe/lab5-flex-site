@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const customMenu = document.getElementById("custommenu");
 
     if (!customMenu) {
-        console.error("Помилка: елемент #custommenu не знайдено в HTML");
+        console.error("Елемент #custommenu не знайдено");
         return;
     }
 
@@ -28,19 +28,42 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("contextmenu", function (event) {
         event.preventDefault();
 
-        customMenu.style.visibility = "visible";
         customMenu.style.display = "block";
-        customMenu.style.left = event.pageX + "px";
-        customMenu.style.top = event.pageY + "px";
-    }, true);
+        customMenu.style.visibility = "visible";
+
+        let x = event.clientX;
+        let y = event.clientY;
+
+        const menuWidth = customMenu.offsetWidth;
+        const menuHeight = customMenu.offsetHeight;
+
+        if (x + menuWidth > window.innerWidth) {
+            x = window.innerWidth - menuWidth - 10;
+        }
+
+        if (y + menuHeight > window.innerHeight) {
+            y = window.innerHeight - menuHeight - 10;
+        }
+
+        customMenu.style.left = x + "px";
+        customMenu.style.top = y + "px";
+    });
 
     document.addEventListener("click", function (event) {
         if (!event.target.closest("#custommenu")) {
-            customMenu.style.visibility = "hidden";
-            customMenu.style.display = "none";
+            hideCustomMenu();
         }
     });
 });
+
+function hideCustomMenu() {
+    const customMenu = document.getElementById("custommenu");
+
+    if (customMenu) {
+        customMenu.style.display = "none";
+        customMenu.style.visibility = "hidden";
+    }
+}
 
 function checkSymbol(event) {
     const keyCode = event.keyCode || event.which;
@@ -53,8 +76,6 @@ function checkSymbol(event) {
 }
 
 function doAction(actionType) {
-    const customMenu = document.getElementById("custommenu");
-
     switch (actionType) {
         case "copy":
             navigator.clipboard.writeText(document.body.innerText);
@@ -87,8 +108,5 @@ function doAction(actionType) {
             break;
     }
 
-    if (customMenu) {
-        customMenu.style.visibility = "hidden";
-        customMenu.style.display = "none";
-    }
+    hideCustomMenu();
 }
