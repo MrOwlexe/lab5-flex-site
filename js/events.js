@@ -5,6 +5,11 @@ let currentFontSize = 16;
 document.addEventListener("DOMContentLoaded", function () {
     const customMenu = document.getElementById("custommenu");
 
+    if (!customMenu) {
+        console.error("Помилка: елемент #custommenu не знайдено в HTML");
+        return;
+    }
+
     const swapImages = document.querySelectorAll(".swap-photo");
 
     swapImages.forEach(function (img) {
@@ -24,13 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         customMenu.style.visibility = "visible";
+        customMenu.style.display = "block";
         customMenu.style.left = event.pageX + "px";
         customMenu.style.top = event.pageY + "px";
-    });
+    }, true);
 
     document.addEventListener("click", function (event) {
         if (!event.target.closest("#custommenu")) {
             customMenu.style.visibility = "hidden";
+            customMenu.style.display = "none";
         }
     });
 });
@@ -46,6 +53,8 @@ function checkSymbol(event) {
 }
 
 function doAction(actionType) {
+    const customMenu = document.getElementById("custommenu");
+
     switch (actionType) {
         case "copy":
             navigator.clipboard.writeText(document.body.innerText);
@@ -78,5 +87,8 @@ function doAction(actionType) {
             break;
     }
 
-    document.getElementById("custommenu").style.visibility = "hidden";
+    if (customMenu) {
+        customMenu.style.visibility = "hidden";
+        customMenu.style.display = "none";
+    }
 }
