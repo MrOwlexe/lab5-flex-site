@@ -15,31 +15,36 @@ body {
     color: #263238;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     min-height: 100vh;
     margin: 18px auto;
     background: #ffffff;
     border: 1px solid #cfd8dc;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
 }
 
 /* Шапка */
 
 .site-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 150px 1fr 480px;
     min-height: 120px;
     border-bottom: 1px solid #b0bec5;
     background: #ffffff;
 }
 
 .photo-block {
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     border-right: 1px solid #cfd8dc;
     background: #f8fbfc;
 }
@@ -51,7 +56,6 @@ body {
 }
 
 .university-block {
-    width: 570px;
     padding: 12px 18px;
     border-right: 1px solid #cfd8dc;
     line-height: 1.25;
@@ -63,15 +67,13 @@ body {
 }
 
 .logo-block {
-    width: 480px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .logo-block div {
-    width: 33.33%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: 8px;
     border-right: 1px solid #cfd8dc;
 }
@@ -94,7 +96,8 @@ body {
 /* Меню */
 
 .main-menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
     justify-content: center;
     background: #123f5f;
     border-bottom: 4px solid #28a6a6;
@@ -120,14 +123,14 @@ body {
 /* Головна */
 
 .home-layout {
-    display: flex;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 270px;
     gap: 20px;
-    flex-grow: 1;
+    padding: 20px;
 }
 
 .home-content {
-    width: 870px;
+    width: 100%;
 }
 
 .home-content h1,
@@ -163,13 +166,15 @@ body {
     font-weight: 600;
 }
 
+/* Grid-блоки на головній сторінці */
+
 .hobby-preview {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 12px;
 }
 
 .hobby-preview div {
-    width: 33.33%;
     min-height: 115px;
     padding: 14px;
     border: 1px solid #cfd8dc;
@@ -181,20 +186,6 @@ body {
     border-right: 1px solid #cfd8dc;
 }
 
-/* Зміна порядку flex-елементів для лабораторної №5 */
-
-.hobby-preview div:nth-child(1) {
-    order: 2;
-}
-
-.hobby-preview div:nth-child(2) {
-    order: 1;
-}
-
-.hobby-preview div:nth-child(3) {
-    order: 3;
-}
-
 .hobby-preview h3 {
     margin-top: 0;
     color: #123f5f;
@@ -203,33 +194,30 @@ body {
 /* Реклама */
 
 .side-ad {
-    width: 270px;
     background: #fff4d6;
     border: 1px solid #ead99f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     text-align: center;
     font-size: 18px;
     color: #6d5416;
 }
 
 .footer-ads {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     padding: 0 20px 20px;
     gap: 15px;
-    flex-shrink: 0;
 }
 
 .footer-ads div {
-    width: 33.33%;
     padding: 18px;
     text-align: center;
     background: #fff4d6;
     border: 1px solid #ead99f;
 }
 
-/* Справжній футер сайту */
+/* Футер */
 
 .site-footer {
     margin-top: auto;
@@ -239,7 +227,6 @@ body {
     padding: 16px;
     font-size: 14px;
     border-top: 4px solid #28a6a6;
-    flex-shrink: 0;
 }
 
 .site-footer p {
@@ -252,18 +239,17 @@ body {
     margin: 20px;
     border: 1px solid #cfd8dc;
     background: #ffffff;
-    flex-grow: 1;
 }
 
 /* Біографія */
 
 .bio-layout {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 70%;
     min-height: 300px;
 }
 
 .bio-photo {
-    width: 30%;
     padding: 25px;
     text-align: center;
     border-right: 1px solid #cfd8dc;
@@ -276,7 +262,6 @@ body {
 }
 
 .bio-text {
-    width: 70%;
     padding: 25px;
     text-align: justify;
     line-height: 1.6;
@@ -303,24 +288,23 @@ body {
 /* Хоббі */
 
 .hobby-layout {
-    display: flex;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 270px;
     gap: 20px;
-    flex-grow: 1;
+    padding: 20px;
 }
 
 .hobby-content {
-    width: 870px;
     border: 1px solid #cfd8dc;
 }
 
 .hobby-columns {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     min-height: 290px;
 }
 
 .hobby-columns article {
-    width: 33.33%;
     padding: 20px;
     border-right: 1px solid #cfd8dc;
     text-align: justify;
@@ -347,17 +331,19 @@ body {
 }
 
 .interesting-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
     min-height: 115px;
     border-top: 1px solid #cfd8dc;
     padding: 14px;
+    align-items: center;
 }
 
 .interesting-item img {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    margin-right: 20px;
 }
 
 .interesting-item h3 {
@@ -370,80 +356,121 @@ body {
     line-height: 1.5;
 }
 
-/* Адаптивність для лабораторної №5 */
+/* Адаптивність для лабораторної №6 */
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     .container {
-        width: 100%;
-        margin: 0;
+        margin: 0 auto;
     }
 
-    .site-header,
-    .home-layout,
-    .hobby-layout,
-    .hobby-columns,
-    .hobby-preview,
-    .footer-ads {
-        flex-direction: column;
-    }
-
-    .photo-block,
-    .university-block,
-    .logo-block,
-    .home-content,
-    .hobby-content,
-    .side-ad {
-        width: 100%;
+    .site-header {
+        grid-template-columns: 130px 1fr;
     }
 
     .logo-block {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, 1fr);
         border-top: 1px solid #cfd8dc;
     }
 
-    .logo-block div {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #cfd8dc;
+    .home-layout,
+    .hobby-layout {
+        grid-template-columns: 1fr;
     }
 
-    .hobby-preview div,
-    .hobby-columns article,
-    .footer-ads div {
-        width: 100%;
-        border-right: 1px solid #cfd8dc;
+    .side-ad {
+        min-height: 120px;
+    }
+
+    .hobby-preview,
+    .hobby-columns,
+    .footer-ads {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hobby-columns article:nth-child(2) {
+        border-right: none;
     }
 
     .bio-layout {
-        flex-direction: column;
-    }
-
-    .bio-photo,
-    .bio-text {
-        width: 100%;
+        grid-template-columns: 1fr;
     }
 
     .bio-photo {
         border-right: none;
         border-bottom: 1px solid #cfd8dc;
     }
+}
 
-    .interesting-item {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 768px) {
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-block,
+    .university-block {
+        border-right: none;
+        border-bottom: 1px solid #cfd8dc;
+    }
+
+    .university-block {
         text-align: center;
     }
 
-    .interesting-item img {
-        margin: 0 0 15px 0;
-    }
-
     .main-menu {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .main-menu a {
         text-align: center;
         border-left: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hobby-preview,
+    .hobby-columns,
+    .footer-ads {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-preview div,
+    .hobby-columns article {
+        border-right: 1px solid #cfd8dc;
+    }
+
+    .interesting-item {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-layout,
+    .hobby-layout {
+        padding: 12px;
+    }
+
+    .page-box {
+        margin: 12px;
+    }
+
+    .home-content h1,
+    .hobby-content h1,
+    .page-box h1 {
+        font-size: 22px;
+    }
+
+    .logo-block {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-block div {
+        border-right: none;
+        border-bottom: 1px solid #cfd8dc;
+    }
+
+    .logo-block div:last-child {
+        border-bottom: none;
     }
 }
