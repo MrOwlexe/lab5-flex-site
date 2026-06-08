@@ -26,7 +26,7 @@
 
     <header class="site-header">
         <div class="photo-block">
-            <img src="images/user.png" alt="Фото">
+            <img class="swap-photo" src="images/user.png" data-hover="images/fis.png" alt="Фото">
         </div>
 
         <div class="university-block">
@@ -63,6 +63,11 @@
     <main class="home-layout">
         <section class="home-content">
             <h1>Головна сторінка</h1>
+        <div class="event-demo-box">
+            <h3>Перевірка події onkeypress</h3>
+            <p>У це поле можна вводити тільки десяткові цифри:</p>
+            <input type="text" class="digit-input" onkeypress="return checkSymbol(event)" placeholder="Введіть тільки цифри">
+        </div>
 
             <div class="home-row wide-card">
                 <h3>Біографія</h3>
@@ -129,6 +134,14 @@
     </footer>
 
 </div>
+<div id="custommenu">
+    <div class="menu-item" onclick="doAction('copy')">Скопіювати вміст</div>
+    <div class="menu-item" onclick="doAction('close')">Закрити вікно</div>
+    <div class="menu-item" onclick="doAction('fontIncrease')">Збільшити шрифт</div>
+    <div class="menu-item" onclick="doAction('fontDecrease')">Зменшити шрифт</div>
+    <div class="menu-item" onclick="doAction('changeBkg')">Змінити фон</div>
+</div>
 
+    <script src="js/events.js"></script>
 </body>
 </html>
