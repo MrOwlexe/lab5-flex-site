@@ -860,6 +860,70 @@ img {
         grid-template-columns: 1fr;
     }
     }
+/* Лабораторна №10 — JavaScript-події */
+
+.event-demo-box {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid #cfd8dc;
+    border-left: 5px solid #28a6a6;
+    background: #fbfdfe;
+}
+
+.event-demo-box h3 {
+    margin: 0 0 8px;
+    color: #123f5f;
+}
+
+.event-demo-box p {
+    margin: 0 0 10px;
+}
+
+.digit-input {
+    width: 260px;
+    max-width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.digit-input:focus {
+    outline: none;
+    border-color: #28a6a6;
+    box-shadow: 0 0 5px rgba(40, 166, 166, 0.4);
+}
+
+/* Користувацьке контекстне меню */
+
+#custommenu {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 230px;
+    display: none;
+    visibility: hidden;
+    background: #ffffff;
+    border: 1px solid #b0bec5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 999999;
+    padding: 6px 0;
+}
+
+#custommenu .menu-item {
+    padding: 12px 16px;
+    color: #123f5f;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #ffffff;
+}
+
+#custommenu .menu-item:hover {
+    background: #e8f5f5;
+    border: 1px solid #28a6a6;
+}
+
 /* Лабораторна №10 — користувацьке контекстне меню */
 
 #custommenu {
