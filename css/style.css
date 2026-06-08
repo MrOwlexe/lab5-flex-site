@@ -860,4 +860,171 @@ img {
         grid-template-columns: 1fr;
     }
     }
+/* Лабораторна №8 — API, віджети та інформери */
+
+.api-page {
+    padding-bottom: 20px;
+}
+
+.api-intro {
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding: 0 20px 20px;
+    align-items: stretch;
+}
+
+.api-card {
+    border: 1px solid #cfd8dc;
+    background: #fbfdfe;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(18, 63, 95, 0.08);
+}
+
+.api-card-wide {
+    grid-column: 1 / -1;
+}
+
+.api-card h3 {
+    margin: 0 0 8px;
+    color: #123f5f;
+    font-size: 20px;
+}
+
+.api-desc {
+    margin: 0 0 14px;
+    color: #455a64;
+    line-height: 1.5;
+}
+
+.iua-image-widget,
+.iua-widget-box {
+    width: 100%;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5f5;
+    border: 1px solid #b0bec5;
+    border-left: 5px solid #28a6a6;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.iua-image-widget img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Google Maps та YouTube */
+
+.map-frame,
+.youtube-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    background: #eef3f6;
+}
+
+.map-frame {
+    height: 430px;
+}
+
+.youtube-frame {
+    height: 520px;
+}
+
+.map-frame iframe,
+.youtube-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* GitHub */
+
+.github-profile-large {
+    width: 100%;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5f5;
+    border: 1px solid #b0bec5;
+    border-left: 5px solid #28a6a6;
+    border-radius: 6px;
+    padding: 22px;
+    text-align: center;
+}
+
+.github-profile-large a {
+    display: inline-block;
+}
+
+.github-profile-large img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #28a6a6;
+    box-shadow: 0 4px 14px rgba(18, 63, 95, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.github-profile-large img:hover {
+    transform: scale(1.05);
+}
+
+.github-profile-large p {
+    margin: 14px 0 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #123f5f;
+}
+
+/* Адаптивність API-сторінки */
+
+@media (max-width: 900px) {
+    .main-menu {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .api-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .api-card-wide {
+        grid-column: auto;
+    }
+
+    .map-frame {
+        height: 320px;
+    }
+
+    .youtube-frame {
+        height: 300px;
+    }
+
+    .github-profile-large {
+        min-height: 300px;
+    }
+
+    .github-profile-large img {
+        width: 170px;
+        height: 170px;
+    }
+}
+
 }
