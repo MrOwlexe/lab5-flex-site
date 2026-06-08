@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript форми</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="site-header">
+        <div class="photo-block">
+            <img class="swap-photo" src="images/user.png" data-hover="images/fis.png" alt="Фото">
+        </div>
+
+        <div class="university-block">
+            <p>Тернопільський національний технічний університет ім. Івана Пулюя</p>
+            <p>Факультет ФІС</p>
+            <p>Кафедра комп’ютерних наук</p>
+            <p><b>Персональна сторінка</b></p>
+            <p><i>Ткачик Назар</i></p>
+            <p>група СП-33</p>
+        </div>
+
+        <div class="logo-block">
+            <div>
+                <img class="tntu-logo" src="images/tntu.png" alt="ТНТУ">
+            </div>
+            <div>
+                <img src="images/fis.png" alt="ФІС">
+            </div>
+            <div>
+                <img src="images/kn.png" alt="КН">
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-menu">
+        <a href="index.html">Головна</a>
+        <a href="biography.html">Біографія</a>
+        <a href="group.html">Моя група</a>
+        <a href="hobby.html">Хоббі</a>
+        <a href="interesting.html">Цікаве</a>
+        <a href="api.html">API</a>
+        <a class="active" href="forms.html">Форми JS</a>
+    </nav>
+
+    <main class="page-box forms-page">
+        <h1>JavaScript. Програмування форм. Масиви</h1>
+
+        <section class="forms-intro">
+            <p>
+                На цій сторінці реалізовано приклади роботи з формами, випадаючими списками,
+                прапорцями, текстовими полями та масивами JavaScript.
+            </p>
+        </section>
+
+        <section class="forms-grid">
+
+            <article class="form-task">
+                <h3>Завдання 1. Перевірка пароля</h3>
+                <p>Введіть пароль довжиною від 8 до 16 символів.</p>
+
+                <form>
+                    <label for="pwd1">Пароль:</label>
+                    <input type="password" id="pwd1" onkeyup="editPassword('pwd1', 'passwordMessage', 8, 16)">
+                    <span id="passwordMessage" class="form-message"></span>
+                </form>
+            </article>
+
+            <article class="form-task">
+                <h3>Завдання 2. Активність кнопки залежно від списку</h3>
+                <p>Кнопка стає активною тільки тоді, коли вибрано елемент, відмінний від першого.</p>
+
+                <form>
+                    <label for="technologyList">Оберіть технологію:</label>
+                    <select id="technologyList" onchange="toggleSelectButton(this.selectedIndex)">
+                        <option>Виберіть технологію</option>
+                        <option>HTML5</option>
+                        <option>CSS3</option>
+                        <option>JavaScript</option>
+                        <option>PHP</option>
+                        <option>MySQL</option>
+                        <option>React</option>
+                        <option>Node.js</option>
+                        <option>GitHub</option>
+                        <option>Bootstrap</option>
+                        <option>API</option>
+                    </select>
+
+                    <button type="button" id="selectButton" disabled>Підтвердити вибір</button>
+                </form>
+            </article>
+
+            <article class="form-task">
+                <h3>Завдання 3. Райони та вулиці</h3>
+                <p>При виборі району формується список відповідних вулиць.</p>
+
+                <form>
+                    <label for="regionsList">Райони:</label>
+                    <select id="regionsList" onchange="showStreets(this.selectedIndex, 'streetsList')">
+                        <option>Виберіть район</option>
+                        <option>Галицький</option>
+                        <option>Франківський</option>
+                        <option>Личаківський</option>
+                        <option>Сихівський</option>
+                        <option>Шевченківський</option>
+                        <option>Всі райони</option>
+                    </select>
+
+                    <label for="streetsList">Вулиці:</label>
+                    <select id="streetsList" class="hidden-select"></select>
+                </form>
+            </article>
+
+            <article class="form-task">
+                <h3>Завдання 4. Підрахунок вартості товарів</h3>
+                <p>При виборі товарів автоматично обчислюється їх загальна вартість.</p>
+
+                <table class="goods-table">
+                    <tr>
+                        <th></th>
+                        <th>Назва товару</th>
+                        <th>Виробник</th>
+                        <th>Ціна</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="98"></td>
+                        <td>Монітор CRT</td>
+                        <td>LG</td>
+                        <td>98</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="132"></td>
+                        <td>Монітор CRT</td>
+                        <td>Samsung</td>
+                        <td>132</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="419"></td>
+                        <td>Монітор TFT</td>
+                        <td>Samsung</td>
+                        <td>419</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="68"></td>
+                        <td>HDD</td>
+                        <td>Seagate</td>
+                        <td>68</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="161"></td>
+                        <td>HDD</td>
+                        <td>Hitachi</td>
+                        <td>161</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="14"></td>
+                        <td>CD ROM</td>
+                        <td>LG</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="16"></td>
+                        <td>CD ROM</td>
+                        <td>Asus</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="goods" value="32"></td>
+                        <td>DVD ROM</td>
+                        <td>Toshiba</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="total-row">Сума: <span id="price">0</span></td>
+                    </tr>
+                </table>
+            </article>
+
+            <article class="form-task form-task-wide">
+                <h3>Завдання 5. Група з десяти прапорців</h3>
+                <p>Потрібно вибрати не менше 5 пунктів.</p>
+
+                <form class="checkbox-form">
+                    <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                    <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+                    <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                    <label><input type="checkbox" name="skills" value="PHP"> PHP</label>
+                    <label><input type="checkbox" name="skills" value="MySQL"> MySQL</label>
+                    <label><input type="checkbox" name="skills" value="Git"> Git</label>
+                    <label><input type="checkbox" name="skills" value="API"> API</label>
+                    <label><input type="checkbox" name="skills" value="Forms"> Forms</label>
+                    <label><input type="checkbox" name="skills" value="Arrays"> Arrays</label>
+                    <label><input type="checkbox" name="skills" value="DOM"> DOM</label>
+                </form>
+
+                <p id="checkboxMessage" class="checkbox-message">Виберіть мінімум 5 пунктів.</p>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Персональна сторінка Ткачика Назара, група СП-33</p>
+    </footer>
+
+</div>
+
+<div id="custommenu" style="
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    display: none;
+    visibility: hidden;
+    background: #ffffff;
+    border: 1px solid #b0bec5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 999999;
+    padding: 6px 0;
+">
+    <div class="menu-item" onclick="doAction('copy')">Скопіювати вміст</div>
+    <div class="menu-item" onclick="doAction('close')">Закрити вікно</div>
+    <div class="menu-item" onclick="doAction('fontIncrease')">Збільшити шрифт</div>
+    <div class="menu-item" onclick="doAction('fontDecrease')">Зменшити шрифт</div>
+    <div class="menu-item" onclick="doAction('changeBkg')">Змінити фон</div>
+</div>
+
+<script src="js/events.js"></script>
+<script src="js/forms.js"></script>
+</body>
+</html>
