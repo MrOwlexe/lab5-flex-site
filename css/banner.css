@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0f172a;
+}
+
+/* Основний банер */
+
+.animated-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.82)),
+        url("../images/banner-bg.jpg") center / cover no-repeat;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+}
+
+/* Анімовані текстові елементи */
+
+.banner-title {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #67e8f9;
+    text-shadow: 0 0 18px rgba(103, 232, 249, 0.5);
+    opacity: 0;
+    animation: titleMove 1.2s ease-out forwards;
+}
+
+.banner-subtitle {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    color: #e0f2fe;
+    opacity: 0;
+    animation: subtitleMove 1.2s ease-out 0.5s forwards;
+}
+
+.banner-button {
+    display: inline-block;
+    padding: 15px 42px;
+    border-radius: 40px;
+    background: #06b6d4;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    opacity: 0;
+    animation: buttonShow 0.8s ease-out 1s forwards, buttonPulse 2s ease-in-out 1.8s infinite;
+}
+
+.banner-button:hover {
+    transform: translateY(-3px);
+    background: #0891b2;
+}
+
+/* PNG-елементи */
+
+.banner-img {
+    position: absolute;
+    z-index: 2;
+    width: 105px;
+    height: auto;
+    filter: drop-shadow(0 0 16px rgba(103, 232, 249, 0.5));
+}
+
+.rocket {
+    left: 8%;
+    bottom: 12%;
+    animation: rocketFly 5s ease-in-out infinite alternate;
+}
+
+.wifi {
+    right: 9%;
+    top: 14%;
+    animation: wifiPulse 3s ease-in-out infinite;
+}
+
+.gear {
+    left: 10%;
+    top: 12%;
+    animation: gearRotate 12s linear infinite;
+}
+
+/* Keyframes */
+
+@keyframes titleMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes subtitleMove {
+    0% {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonShow {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.45);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(6, 182, 212, 0.9);
+    }
+}
+
+@keyframes rocketFly {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(-45px) rotate(8deg);
+    }
+}
+
+@keyframes wifiPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+}
+
+@keyframes gearRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Адаптивність банера */
+
+@media (max-width: 992px) {
+    .banner-title {
+        font-size: 48px;
+    }
+
+    .banner-subtitle {
+        font-size: 20px;
+    }
+
+    .banner-img {
+        width: 85px;
+    }
+
+    .rocket {
+        left: 5%;
+        bottom: 8%;
+    }
+
+    .wifi {
+        right: 5%;
+        top: 10%;
+    }
+
+    .gear {
+        left: 5%;
+        top: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-banner {
+        min-height: 600px;
+    }
+
+    .banner-title {
+        font-size: 38px;
+    }
+
+    .banner-subtitle {
+        font-size: 18px;
+    }
+
+    .banner-button {
+        font-size: 16px;
+        padding: 13px 34px;
+    }
+
+    .gear {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-banner {
+        min-height: 500px;
+        padding: 30px 14px;
+    }
+
+    .banner-title {
+        font-size: 30px;
+    }
+
+    .banner-subtitle {
+        font-size: 16px;
+    }
+
+    .banner-img {
+        width: 60px;
+    }
+
+    .rocket {
+        bottom: 5%;
+    }
+
+    .wifi {
+        top: 6%;
+    }
+}
+
+@media (max-height: 500px) {
+    .animated-banner {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .banner-img {
+        display: none;
+    }
+}
