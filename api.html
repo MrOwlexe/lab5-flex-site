@@ -51,48 +51,102 @@
 
         <section class="api-intro">
             <p>
-                На цій сторінці розміщено приклади використання API, веб-віджетів та інформерів.
-                Було додано погодний блок, фінансовий інформер, карту Google Maps, GitHub-профіль
-                та вбудоване YouTube-відео.
+                На сторінці розміщено приклади використання API, веб-віджетів та інформерів.
+                Для лабораторної роботи використано погодний інформер i.ua, фінансовий інформер i.ua,
+                Google Maps, GitHub-профіль та YouTube embed.
             </p>
         </section>
 
         <section class="api-grid">
 
             <article class="api-card">
-                <h3>Погодний інформер</h3>
-                <p class="api-desc">Приклад погодного віджета, який показує інформацію про погоду.</p>
+                <h3>Погодний інформер i.ua</h3>
+                <p class="api-desc">Віджет погоди для міста Тернопіль.</p>
 
-                <div class="weather-widget custom-api-widget">
-                    <div class="weather-city">Тернопіль</div>
-                    <div class="weather-temp">+15°C</div>
-                    <div class="weather-info">Хмарно з проясненнями</div>
-                    <div class="weather-small">Вітер: 4 м/с · Вологість: 72%</div>
+                <div class="iua-widget-box">
+                    <style>
+                        #IUAweather {min-width: 120px; width: 100% !important; cursor: pointer;}
+                        #IUAweather * {margin: 0; padding: 0;}
+                        #IUAweather .content {overflow: hidden; padding: 8px; font-family: Arial; font-size: 12px; color: #000000; background: #EEEEEE; border: 1px solid #00529c;}
+                        #IUAweather h1 {overflow: hidden; margin-top: -4px; font-size: 14px; font-weight: bold; height: 24px; line-height: 24px; color: #000000;}
+                        #IUAweather h1 span {float: left; white-space: nowrap;}
+                        #IUAweather h1 i {float: right; display: inline-block; width: 36px; height: 15px; background: url(https://i3.i.ua/v2/logo/logo_small_14_black.png) no-repeat 0 1px transparent; opacity: .3;}
+                        #IUAweather a, #IUAweather a:hover {border: none; text-decoration: underline; color: #000000;}
+                        #IUAweather dl {overflow: hidden; background: #FFFFFF; color:#000000; padding: 8px; margin-bottom: 4px;}
+                        #IUAweather dl dt {font-weight: bold; font-size: 13px;}
+                        #IUAweather dl dd {float: left; white-space: nowrap; width: 50%; min-width: 105px;}
+                        #IUAweather dl dd span {display: block; line-height: 28px; font-size: 22px; font-family: Trebuchet MS;}
+                        #IUAweather dl dd span img {vertical-align: top; margin-right: 2px;}
+                    </style>
+
+                    <div id="IUAweather" onclick="window.location.href='https://weather.i.ua/Ternopol/';">
+                        <div class="content" id="IUAweatherBody">
+                            <h1 id="IUAweatherTitle">
+                                <span><a href="https://weather.i.ua/Ternopol/" id="IUAweatherTitleLink">Погода</a></span><i></i>
+                            </h1>
+                            <dl id="IUAweatherEmbed"></dl>
+                            <a href="https://weather.i.ua/Ternopol/" id="IUAweatherLink">Прогноз погоди на тиждень</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        iWeatherCity = 12101;
+                        iWeatherLang = 2;
+                        iWeatherEnc = 0;
+                    </script>
+                    <script src="https://i3.i.ua/js/i/weather_informer.js" charset="windows-1251"></script>
                 </div>
             </article>
 
             <article class="api-card">
-                <h3>Фінансовий інформер</h3>
-                <p class="api-desc">Інформер курсів валют, стилізований під дизайн сайту.</p>
+                <h3>Фінансовий інформер i.ua</h3>
+                <p class="api-desc">Інформер курсів валют.</p>
 
-                <div class="finance-widget custom-api-widget">
-                    <div class="currency-row">
-                        <span>USD</span>
-                        <strong>41.20 грн</strong>
+                <div class="iua-widget-box">
+                    <style>
+                        #IUAfinance58 { min-width: 175px; width: 100% !important; cursor: pointer;}
+                        #IUAfinance58 * {margin: 0; padding: 0;}
+                        #IUAfinance58 .content {overflow: hidden; padding: 8px; font-family: Arial; font-size: 12px; color: #000000; background: #eeeeee; border: 1px solid #000000;}
+                        #IUAfinance58 h1 {overflow: hidden; margin-top: -4px; font-size: 14px; font-weight: bold; height: 24px; line-height: 24px; color: #000000;}
+                        #IUAfinance58 h1 span {float: left; white-space: nowrap;}
+                        #IUAfinance58 h1 i {float: right; display: inline-block; width: 36px; height: 15px; background: url(https://i.i.ua/v2/logo/logo_small_14_black.png) no-repeat 0 1px transparent; opacity: .3;}
+                        #IUAfinance58 a, #IUAfinance58 a:hover {border: none; text-decoration: underline; color: #000000;}
+                        #IUAfinance58 dl {overflow: hidden; background: #ffffff; padding: 8px; margin-bottom: 4px;}
+                        #IUAfinance58 dl dt {font-weight: bold; font-size: 13px;}
+                        #IUAfinance58 dl dd {clear: left; border-top: 1px dotted #DDD;}
+                        #IUAfinance58 dl span {display: block; float: left; width: 39%; white-space: nowrap; text-align: right;}
+                        #IUAfinance58 dl span.th {width: 22%; text-align: left;}
+                        #IUAfinance58 dl dt span {font-size: 10px; font-weight: normal;}
+                        #IUAfinance58 dl dd span {line-height: 26px; font-size: 20px; font-family: Trebuchet MS;}
+                        #IUAfinance58 dl dd span img {vertical-align: middle; margin-right: 1px;}
+                    </style>
+
+                    <div id="IUAfinance58">
+                        <div class="content">
+                            <h1>
+                                <span><a href="https://finance.i.ua/bank/15/" id="IUAfinance58TitleLink">Курси валют</a></span><i></i>
+                            </h1>
+                            <dl id="IUAfinance58Embed"></dl>
+                            <a href="https://finance.i.ua/">Курси долара та євро по банках</a>
+                        </div>
                     </div>
-                    <div class="currency-row">
-                        <span>EUR</span>
-                        <strong>44.75 грн</strong>
-                    </div>
-                    <div class="currency-row">
-                        <span>PLN</span>
-                        <strong>10.45 грн</strong>
-                    </div>
-                    <div class="finance-note">Дані наведено як приклад фінансового інформера.</div>
+
+                    <script>
+                        if (typeof(iFinance) == "undefined") {
+                            if (typeof(iFinanceData) == "undefined") {
+                                document.write('<scr' + 'ipt src="https://i.i.ua/js/i/finance_informer.js?1" charset="windows-1251"></scr' + 'ipt>');
+                                iFinanceData = [];
+                            }
+                            iFinanceData.push({b:15,c:[840,978],enc:0, lang:1,p:'58'});
+                        } else {
+                            window['oiFinance58'] = new iFinance();
+                            window['oiFinance58'].gogo({b:15,c:[840,978],enc:0, lang:1,p:'58'});
+                        }
+                    </script>
                 </div>
             </article>
 
-            <article class="api-card">
+            <article class="api-card api-card-wide">
                 <h3>Google Maps</h3>
                 <p class="api-desc">Вбудована карта з розташуванням Тернопільського національного технічного університету.</p>
 
@@ -108,7 +162,7 @@
 
             <article class="api-card">
                 <h3>GitHub-профіль</h3>
-                <p class="api-desc">Посилання на GitHub-профіль студента та приклад інтеграції зовнішнього ресурсу.</p>
+                <p class="api-desc">Приклад інтеграції зовнішнього ресурсу GitHub.</p>
 
                 <div class="github-widget custom-api-widget">
                     <div class="github-avatar">
@@ -122,9 +176,9 @@
                 </div>
             </article>
 
-            <article class="api-card api-card-wide">
+            <article class="api-card">
                 <h3>YouTube embed</h3>
-                <p class="api-desc">Приклад вбудованого відео з YouTube через iframe.</p>
+                <p class="api-desc">Вбудоване відео з YouTube через iframe.</p>
 
                 <div class="youtube-frame">
                     <iframe

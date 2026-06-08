@@ -279,7 +279,7 @@ img {
 
 .main-menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(6, auto);
     justify-content: center;
     background: #123f5f;
     border-bottom: 4px solid #28a6a6;
