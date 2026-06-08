@@ -873,4 +873,25 @@ img {
             text-align: center;
         }
     }
+
+    /* Віджет погоди i.ua у форматі картинки */
+
+    .iua-image-widget {
+        width: 100%;
+        min-height: 145px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e8f5f5;
+        border: 1px solid #b0bec5;
+        border-left: 5px solid #28a6a6;
+        border-radius: 6px;
+        padding: 16px;
+    }      
+
+    .iua-image-widget img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 }
