@@ -953,5 +953,19 @@ img {
     background: #e8f5f5;
     border: 1px solid #28a6a6;
 }
-    
+
+#custommenu .menu-item {
+    padding: 12px 16px;
+    color: #123f5f;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #ffffff;
+}
+
+#custommenu .menu-item:hover {
+    background: #e8f5f5;
+    border: 1px solid #28a6a6;
+}
+
 }

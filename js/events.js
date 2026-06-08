@@ -2,37 +2,22 @@
 
 let currentFontSize = 16;
 
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     const customMenu = document.getElementById("custommenu");
 
     if (!customMenu) {
-        console.error("Елемент #custommenu не знайдено");
+        console.log("custommenu не знайдено");
         return;
     }
 
-    const swapImages = document.querySelectorAll(".swap-photo");
-
-    swapImages.forEach(function (img) {
-        const originalSrc = img.getAttribute("src");
-        const hoverSrc = img.dataset.hover;
-
-        img.addEventListener("mouseover", function () {
-            img.setAttribute("src", hoverSrc);
-        });
-
-        img.addEventListener("mouseout", function () {
-            img.setAttribute("src", originalSrc);
-        });
-    });
-
-    document.addEventListener("contextmenu", function (event) {
+    document.oncontextmenu = function (event) {
         event.preventDefault();
-
-        customMenu.style.display = "block";
-        customMenu.style.visibility = "visible";
 
         let x = event.clientX;
         let y = event.clientY;
+
+        customMenu.style.display = "block";
+        customMenu.style.visibility = "visible";
 
         const menuWidth = customMenu.offsetWidth;
         const menuHeight = customMenu.offsetHeight;
@@ -47,14 +32,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         customMenu.style.left = x + "px";
         customMenu.style.top = y + "px";
-    });
 
-    document.addEventListener("click", function (event) {
+        return false;
+    };
+
+    document.onclick = function (event) {
         if (!event.target.closest("#custommenu")) {
             hideCustomMenu();
         }
+    };
+
+    const swapImages = document.querySelectorAll(".swap-photo");
+
+    swapImages.forEach(function (img) {
+        const originalSrc = img.getAttribute("src");
+        const hoverSrc = img.dataset.hover;
+
+        img.onmouseover = function () {
+            img.setAttribute("src", hoverSrc);
+        };
+
+        img.onmouseout = function () {
+            img.setAttribute("src", originalSrc);
+        };
     });
-});
+};
 
 function hideCustomMenu() {
     const customMenu = document.getElementById("custommenu");

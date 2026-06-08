@@ -134,7 +134,19 @@
     </footer>
 
 </div>
-<div id="custommenu">
+<div id="custommenu" style="
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    display: none;
+    visibility: hidden;
+    background: #ffffff;
+    border: 1px solid #b0bec5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 999999;
+    padding: 6px 0;
+">
     <div class="menu-item" onclick="doAction('copy')">Скопіювати вміст</div>
     <div class="menu-item" onclick="doAction('close')">Закрити вікно</div>
     <div class="menu-item" onclick="doAction('fontIncrease')">Збільшити шрифт</div>
